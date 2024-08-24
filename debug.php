@@ -9,3 +9,5 @@ $handle = fopen($file, 'a');
 fwrite($handle, $currentDateTime . "\n");
 
 fclose($handle);
+
+echo "Дата и время записаны: $currentDateTime";
