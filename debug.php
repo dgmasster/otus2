@@ -1,13 +1,12 @@
 <?php
 
-$currentDateTime = date('Y-m-d H:i:s');
+$dateTime = date('Y-m-d H:i:s');
 
-$file = 'log/log.txt';
+$file = 'log.txt';
 
-$handle = fopen($file, 'a');
+$current = file_get_contents($file);
 
-fwrite($handle, $currentDateTime . "\n");
+$current .= "$dateTime\n";
 
-fclose($handle);
-
-echo "Дата и время записаны: $currentDateTime";
+file_put_contents($file, $current);
+echo "Дата и время записаны: $dateTime";
